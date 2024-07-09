@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import config from "@/config.js";
 import BgImage from "@/components/BgImage.jsx";
 import Header from "@/components/Header.jsx";
 import Category from "./Category.jsx";
 import Search from "@/components/Search.jsx";
+import UserCard from "@/components/userCard.jsx";
 
 
 const Tours = () => {
 
     const [cats, setCats] = useState( {} );
     const [query, setQuery] = useState( "" );
+    const navigate = useNavigate();
 
     useEffect( () => {
         async function queryDB() {
@@ -33,7 +36,9 @@ const Tours = () => {
         <div className="p-12">
             <BgImage />
 
-            <div className="flex items-start justify-between">
+            <UserCard onClick={ () => navigate('/user')} className="absolute top-0 right-8 scale-[60%]"/>
+
+            <div className="flex items-start justify-between w-5/6">
                 <Header/>
                 <Search placeholder="Search" className="mt-3 mr-40" search={query} setSearch={setQuery}/>
             </div>

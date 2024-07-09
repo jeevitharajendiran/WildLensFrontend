@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 
 const Register = () => {
+
+    const navigate = useNavigate();
+
     const[email,setEmail]=useState();
     const[password,setPassword]=useState();
     const[isValid,setIsValid]=useState(true)
@@ -38,7 +41,8 @@ const Register = () => {
         res = res["data"];
         if( !res.error ){
            const token=res.token;
-           window.alert(token);
+           localStorage.setItem( 'authToken', token );
+           navigate(-1);
         }
         else{
           window.alert(res.error )   

@@ -1,14 +1,22 @@
 import './Card.css'
 import { PropTypes } from "prop-types";
+import { useNavigate } from 'react-router-dom';
 import config from '@/config';
 import star from "@/assets/icons/star.svg"
 
 const Card = ( { tour, className } ) => {
-
+  
   let rating = 4;
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/tours/${tour["_id"]}`, { state:{ tour } } );
+    console.log( tour );
+  }
+
   return (
-    <div className={`content shadow-lg transition-all duration-300 ` + ( className ? className : '')}>
+    <div className={`content shadow-lg transition-all duration-300 ` + ( className ? className : '')} onClick={ handleClick }>
       <div className='img_cont'>
         <img src={`${config.API_URI}${tour.image}`} className='imgs overflow-y-hidden object-cover object-center shadow-lg' alt="image" />
         <div className='off'>

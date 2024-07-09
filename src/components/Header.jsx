@@ -1,6 +1,8 @@
-const Header = () => {
+import { PropTypes } from "prop-types";
+
+const Header = ( { className }) => {
     return ( 
-        <div className="">
+        <div className={className}>
             <p className="text-3xl">{"Discover the World's Wonder With"}</p>
             <p className="text-[3.5rem] font-bold">WildLens Tours</p>
         </div>
@@ -8,3 +10,7 @@ const Header = () => {
 }
  
 export default Header;
+
+Header.propTypes = {
+    className: PropTypes.string
+}
