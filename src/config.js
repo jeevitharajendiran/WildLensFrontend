@@ -1,5 +1,5 @@
 const config = {
-    API_URI: "http://localhost:3000/api"
+    API_URI: "https://wildlenstours-8au5.onrender.com/api"
 };
 
 export default config;
