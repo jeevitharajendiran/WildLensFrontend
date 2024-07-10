@@ -23,7 +23,7 @@ const Tour = () => {
 
                 <div className="p-4 w-full">
                     <p className="text-3xl font-bold">{tour.name} Package</p>
-                    <p className="text-pretty mt-6 text-xl">{tour.description} </p>
+                    <p className="text-pretty mt-6 text-xl">{tour.description}</p>
                 </div>
 
                 <button className="bg-[#0094FF] text-white px-4 py-2 w-max font-bold text-xl rounded-lg no-underline hover:bg-[#3268de] hover:scale-105 origin-center shadow-md transition-all duration-200 mx-auto mt-4" onClick={handleClick}>Book Now</button>

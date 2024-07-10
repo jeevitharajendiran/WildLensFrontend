@@ -37,12 +37,13 @@ const Register = () => {
        }
   
       try {
-        let res = await axios.post('http://192.168.157.166:3000/api/auth/login',body );
+        let res = await axios.post('http://localhost:3000/api/auth/login',body );
         res = res["data"];
         if( !res.error ){
            const token=res.token;
            localStorage.setItem( 'authToken', token );
            navigate(-1);
+           window.alert("Logged In")
         }
         else{
           window.alert(res.error )   

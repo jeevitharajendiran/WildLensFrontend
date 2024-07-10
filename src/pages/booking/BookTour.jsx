@@ -83,7 +83,7 @@ const BookTour = () => {
             <div className="flex flex-col mt-8 p-8 gap-8">
                 <div className="flex w-1/3 justify-between items-center ">
                     <p className="text-2xl font-bold ">No. of Companions : </p>
-                    <ValGroup val={count} change={setCount} className="w-1/4" />
+                    <ValGroup val={count} change={setCount} className="w-2/6" />
                 </div>
 
                 <div className="flex flex-col gap-8">

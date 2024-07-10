@@ -51,7 +51,9 @@ const User = () => {
                         </thead>
                         <tbody>
                             {bookings.map( x => (
-                                <BookingRows key={x["_id"]} booking={x} trigger={setTrigger}/>
+                                <>
+                                    <BookingRows key={x["_id"]} booking={x} trigger={setTrigger}/>
+                                </>
                             ))}
                         </tbody>
                     </table>

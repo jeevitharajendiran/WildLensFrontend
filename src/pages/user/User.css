@@ -59,11 +59,13 @@ td{
 .user_button{
     width:100px;
     height:25px;
-    margin : 2% 0px 0px 38%;
+    margin : 0% 0px 0px 0%;
     background: red;
     outline: none;
     border: none;
     color:white;
+    font-weight: bold;
+    font-size: 16px;
     border-radius: 7px;
     transition: background 0.2s ease;
     transition: scale 0.2s ease;

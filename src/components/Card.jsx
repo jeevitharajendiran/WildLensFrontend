@@ -5,8 +5,6 @@ import config from '@/config';
 import star from "@/assets/icons/star.svg"
 
 const Card = ( { tour, className } ) => {
-  
-  let rating = 4;
 
   const navigate = useNavigate();
 
@@ -14,6 +12,8 @@ const Card = ( { tour, className } ) => {
     navigate(`/tours/${tour["_id"]}`, { state:{ tour } } );
     console.log( tour );
   }
+
+  const rating = parseInt(((Math.random()) * 10) % 5 + 1 );
 
   return (
     <div className={`content shadow-lg transition-all duration-300 ` + ( className ? className : '')} onClick={ handleClick }>
