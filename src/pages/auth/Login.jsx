@@ -38,7 +38,11 @@ const Register = () => {
        }
   
       try {
-        let res = await axios.post(`${config.API_URI}/auth/login`,body );
+        let res = await axios.post(`${config.API_URI}/auth/login`,body, {
+          headers: {
+            'Content-Type': 'application/json'
+          } 
+        });
         res = res["data"];
         if( !res.error ){
            const token=res.token;

@@ -38,7 +38,11 @@ const Register = () => {
        }
   
       try {
-        const res = await axios.post(`${config.API_URI}/auth/register`,body );
+        const res = await axios.post(`${config.API_URI}/auth/register`,body, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
         if( !res.error ){
           window.alert( res["data"]["message"] )
         }
