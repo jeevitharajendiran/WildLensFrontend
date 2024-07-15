@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import axios from 'axios';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import config from '@/config';
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
     const[validPass,setValidPass]=useState(true)
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passRegex=/^[a-zA-z0-9@_]{8,16}$/;
+    const navigate = useNavigate();
 
     let passtip = "Password Must contain 8 - 16 characters\nIt can include Alphabets, digits, @ and _";
 
@@ -44,7 +46,8 @@ const Register = () => {
           }
         });
         if( !res.error ){
-          window.alert( res["data"]["message"] )
+          window.alert( res["data"]["message"] );
+          navigate("/auth/");
         }
         else{
           window.alert(res["data"]["error"])
