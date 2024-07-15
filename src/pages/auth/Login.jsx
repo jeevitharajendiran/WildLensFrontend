@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
+import config from '@/config';
 
 const Register = () => {
 
@@ -37,7 +38,7 @@ const Register = () => {
        }
   
       try {
-        let res = await axios.post('http://localhost:3000/api/auth/login',body );
+        let res = await axios.post(`${config.API_URI}/auth/login`,body );
         res = res["data"];
         if( !res.error ){
            const token=res.token;

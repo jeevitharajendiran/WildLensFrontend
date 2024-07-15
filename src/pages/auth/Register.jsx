@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import axios from 'axios';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import config from '@/config';
 
 const Register = () => {
     const[name,setName]=useState();
@@ -37,7 +38,7 @@ const Register = () => {
        }
   
       try {
-        const res = await axios.post('http://192.168.157.166:3000/api/auth/register',body );
+        const res = await axios.post(`${config.API_URI}/auth/register`,body );
         if( !res.error ){
           window.alert( res["data"]["message"] )
         }

@@ -1,8 +1,9 @@
 import axios from 'axios';
 import history from './history';
+import config from './config';
 
 const axiosInstance = axios.create({
-    baseURL: "https://wildlenstours-8au5.onrender.com/api", // Replace with your API base URL
+    baseURL: config.API_URI,
     timeout: 1000,
 });
 
