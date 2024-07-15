@@ -47,8 +47,8 @@ const Register = () => {
         if( !res.error ){
            const token=res.token;
            localStorage.setItem( 'authToken', token );
-           navigate("/tours");
            window.alert("Logged In")
+           navigate("/tours");
         }
         else{
           window.alert(res.error )   
