@@ -8,7 +8,6 @@ const BookingRows = ( {booking, trigger} ) => {
         if( resp["data"].ok ) {
             window.alert("Booking Removed Successfully");
             trigger(x => !x);
-            console.log("Success");
         }
     }
 

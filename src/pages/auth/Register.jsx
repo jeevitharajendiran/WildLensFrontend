@@ -31,7 +31,6 @@ const Register = () => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log("Success")
   
       let body = {
         email: email,

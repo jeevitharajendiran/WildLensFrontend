@@ -10,7 +10,6 @@ const Card = ( { tour, className } ) => {
 
   const handleClick = () => {
     navigate(`/tours/${tour["_id"]}`, { state:{ tour } } );
-    console.log( tour );
   }
 
   const rating = parseInt(((Math.random()) * 10) % 5 + 1 );
